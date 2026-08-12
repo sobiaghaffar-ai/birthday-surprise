@@ -259,6 +259,7 @@ body {
 </head>
 
 <body>
+    <button onclick="goBack()" class="back-btn">← Back</button>
     <div id="page1">
 
     <div class="card">
@@ -271,7 +272,7 @@ body {
             </div>
 
             <div class="photo-frame">
-                <img src="photo.png" alt="Birthday Photo">
+                <img src="image.jpeg" alt="Birthday Photo">
             </div>
 
             <div class="hearts">
@@ -395,6 +396,7 @@ function checkCode() {
         document.getElementById("page1").style.display = "none";
 
         document.getElementById("page2").style.display = "flex";
+        document.querySelector(".back-btn").style.display = "block";
 
     } else {
 
@@ -456,6 +458,35 @@ function sayNo() {
         "😜 Oops! You have to press YES! 😂❤️";
 
 }
+function goBack() {
+    document.getElementById("page2").style.display = "none";
+    document.getElementById("page1").style.display = "flex";
+
+    enteredCode = "";
+    updatePassword();
+}
 </script>
+
+
+<style>
+.back-btn {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #d63384;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.back-btn:hover {
+    background: #b02a6f;
+}
+</style>
 </body>
 </html>
