@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Surprise 💖</title>
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#page1 {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #fff5fa, #ffd6e6);
+}
+
+.card {
+    width: 90%;
+    max-width: 900px;
+    min-height: 520px;
+    display: flex;
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+}
+
+.left {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.right {
+    width: 45%;
+    background: linear-gradient(180deg, #efa3bb, #d67899);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.title {
+    color: #d64e7b;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.photo-frame {
+    width: 270px;
+    height: 320px;
+    border-radius: 50%;
+    padding: 8px;
+    border: 10px solid #f5a5bd;
+    box-shadow: 0 0 0 5px #ffd3df,
+                0 10px 25px rgba(0,0,0,0.15);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.hearts {
+    margin-top: 15px;
+    color: #e75f8b;
+    font-size: 22px;
+}
+
+.lock-title {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.password {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.box {
+    width: 45px;
+    height: 45px;
+    border: 3px solid white;
+    border-radius: 7px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    gap: 10px;
+}
+
+.key {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.key:hover {
+    transform: scale(1.1);
+    background: #ffe8f0;
+}
+
+.message {
+    color: white;
+    margin-top: 15px;
+}
+/* PAGE 2 */
+
+#page2 {
+    display: none;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffd6e6, #f7a8c4);
+    text-align: center;
+}
+
+.surprise-card {
+    width: 90%;
+    max-width: 650px;
+    padding: 50px 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.surprise-card h1 {
+    color: #d64e7b;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.surprise-card p {
+    color: #777;
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.buttons button {
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #e75f8b;
+    color: white;
+    transition: 0.3s;
+}
+
+.buttons button:hover {
+    transform: scale(1.1);
+    background: #d64e7b;
+}
+
+#answer {
+    margin-top: 25px;
+    color: #d64e7b;
+    font-size: 22px;
+    font-weight: bold;
+}
+/* FUNNY NO BUTTON */
+
+#noButton {
+    position: relative;
+    transition: 0.2s;
+}
+
+#noButton:hover {
+    transform: translate(
+        80px,
+        -40px
+    ) rotate(10deg);
+}
+.floating-hearts {
+    font-size: 30px;
+    margin: 15px 0;
+    animation: heartFloat 2s ease-in-out infinite;
+}
+
+.big-emoji {
+    font-size: 70px;
+    margin: 20px 0;
+    animation: bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes heartFloat {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes bounce {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+    <div id="page1">
+
+    <div class="card">
+
+        <!-- LEFT SIDE -->
+        <div class="left">
+
+            <div class="title">
+                💕 A Special Surprise 💕
+            </div>
+
+            <div class="photo-frame">
+                <img src="photo.png" alt="Birthday Photo">
+            </div>
+
+            <div class="hearts">
+                ♡ ♥ ♡ ♥ ♡ ♥ ♡
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="right">
+
+            <div class="lock-title">
+                🔐 Enter a passcode
+            </div>
+
+            <div class="password">
+
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+
+            </div>
+
+            <div class="keypad">
+
+                <button class="key" onclick="pressKey('1')">1</button>
+<button class="key" onclick="pressKey('2')">2</button>
+<button class="key" onclick="pressKey('3')">3</button>
+
+<button class="key" onclick="pressKey('4')">4</button>
+<button class="key" onclick="pressKey('5')">5</button>
+<button class="key" onclick="pressKey('6')">6</button>
+
+<button class="key" onclick="pressKey('7')">7</button>
+<button class="key" onclick="pressKey('8')">8</button>
+<button class="key" onclick="pressKey('9')">9</button>
+
+<button class="key" onclick="clearCode()">*</button>
+<button class="key" onclick="pressKey('0')">0</button>
+<button class="key" onclick="checkCode()">#</button>
+            </div>
+
+            <div class="message"></div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- PAGE 2 -->
+
+<div id="page2">
+
+    <div class="surprise-card">
+
+        <h1>💖  Are You Ready For Surprise? 💖</h1>
+
+        <p>Something special is waiting for you... 🎁</p>
+
+        <div class="buttons">
+
+            <button onclick="sayYes()">YES ❤️</button>
+
+            <button id="noButton" onclick="sayNo()">NO 😜</button>
+
+        </div>
+
+        <div id="answer"></div>
+
+    </div>
+
+</div>
+<script>
+    let enteredCode = "";
+
+const correctCode = "2006";
+
+
+function pressKey(number) {
+
+    if (enteredCode.length < 4) {
+        enteredCode += number;
+        updatePassword();
+    }
+
+}
+
+
+function updatePassword() {
+
+    const boxes = document.querySelectorAll(".box");
+
+    boxes.forEach((box, index) => {
+
+        if (enteredCode[index]) {
+            box.innerHTML = "●";
+        } else {
+            box.innerHTML = "";
+        }
+
+    });
+
+}
+
+
+function clearCode() {
+
+    enteredCode = "";
+
+    updatePassword();
+
+}
+
+
+function checkCode() {
+
+    if (enteredCode === correctCode) {
+
+        document.getElementById("page1").style.display = "none";
+
+        document.getElementById("page2").style.display = "flex";
+
+    } else {
+
+        const message = document.querySelector(".message");
+
+        message.innerHTML = "Wrong Password! 💔";
+
+        enteredCode = "";
+
+        updatePassword();
+
+    }
+
+}
+function sayYes() {
+
+    document.getElementById("page2").innerHTML = `
+
+        <div class="surprise-card">
+
+            <div class="floating-hearts">
+                💕 ❤️ 💖 💗 💕
+            </div>
+
+            <h1>🎉 SURPRISE! 🎉</h1>
+
+            <p>
+                💖 You are very special! 💖
+            </p>
+
+            <div class="big-emoji">
+                🎂🎁🎈❤️
+            </div>
+
+            <audio controls loop>
+                <source src="birthday.mp3.mpeg" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+
+            <p>
+                Happy Birthday! 🥳
+                <br>
+                Lots of love and happiness for you! 💕
+            </p>
+
+            <div class="floating-hearts">
+                💕 💖 ❤️ 💕 💗
+            </div>
+
+        </div>
+
+    `;
+}
+
+
+function sayNo() {
+
+    document.getElementById("answer").innerHTML =
+        "😜 Oops! You have to press YES! 😂❤️";
+
+}
+</script>
+</body>
+</html>
